@@ -22,8 +22,9 @@ import org.exoplatform.jcr.example.service.PersonManager;
 
 
 @ConfiguredBy({
-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
+//		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
+//		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
+		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-configuration.xml"),		
 		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-example-test-configuration.xml")
 		})
 public class PersonManagerTest extends AbstractKernelTest {
@@ -40,6 +41,7 @@ public class PersonManagerTest extends AbstractKernelTest {
 		portalContainer = PortalContainer.getInstance();
 		repositoryService = (RepositoryService) portalContainer
 				.getComponentInstanceOfType(RepositoryService.class);
+		System.out.println("----repositoryService "+repositoryService);
 		sessionManager = new JCRSessionManager(WORKSPACE, repositoryService);
 	}
 

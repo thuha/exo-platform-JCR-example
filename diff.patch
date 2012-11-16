@@ -1,0 +1,363 @@
+diff --git a/pom.xml b/pom.xml
+index 6a6e00d..2d3b88f 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -9,73 +9,22 @@
+ 	<name>exojcr</name>
+ 	<url>http://maven.apache.org</url>
+ 	<properties>
+-		<javax.resource.version>1.5</javax.resource.version>
+-		<javax.servlet.version>2.5</javax.servlet.version>
+-		<javax.portlet.version>2.0</javax.portlet.version>
+-		<javax.jcr.version>1.0</javax.jcr.version>
+-		<javax.ws.rs.version>1.0</javax.ws.rs.version>
+-		<javax.xml.bind.version>2.1</javax.xml.bind.version>
+-
+-		<asm.version>1.5.3</asm.version>
+-		<antlr.version>2.7.6rc1</antlr.version>
+-		<cglib.version>2.2</cglib.version>
+-		<bsh.version>2.0b1</bsh.version>
+-		<c3p0.version>0.9.1.2</c3p0.version>
+-		<cglib.version>2.2</cglib.version>
+-		<commons-digester.version>1.7</commons-digester.version>
+-		<commons-lang.version>2.4</commons-lang.version>
+-		<commons-collections.version>3.2.1</commons-collections.version>
+-		<commons-dbcp.version>1.2.1</commons-dbcp.version>
+-		<commons-pool.version>1.2</commons-pool.version>
+-		<findbugs.version>1.0.0</findbugs.version>
+-		<html-parser.version>1.6</html-parser.version>
+-		<ical4j.version>0.9.20</ical4j.version>
+-		<hsqldb.version>1.8.0.7</hsqldb.version>
+-		<junit.version>3.8.1</junit.version>
+-		<javassist.version>3.4.GA</javassist.version>
+-		<mysql.version>5.1.6</mysql.version>
+-		<rome.version>0.9</rome.version>
+-		<stax.version>1.0</stax.version>
+-		<xerces.version>2.9.1</xerces.version>
+-		<xml-apis.version>1.3.04</xml-apis.version>
+-		<quartz.version>1.5.2</quartz.version>
+ 		<picocontainer.version>1.1</picocontainer.version>
+-
+-		<org.exoplatform.kernel.version>2.3.0-Beta03</org.exoplatform.kernel.version>
+-      	<org.exoplatform.core.version>2.4.0-Beta03</org.exoplatform.core.version>
+-		<org.exoplatform.ws.version>2.1.7-GA</org.exoplatform.ws.version>
+-		<org.exoplatform.jcr.version>1.14.0-Beta03</org.exoplatform.jcr.version>
+-		<org.exoplatform.portal.version>3.2.0-PLF-SNAPSHOT</org.exoplatform.portal.version>
++		<junit.version>4.0</junit.version>
++		<org.slf4j.slf4j-simple.version>1.5.6</org.slf4j.slf4j-simple.version>
++		<org.hsqldb.version>2.0.0</org.hsqldb.version>
++
++		<org.exoplatform.kernel.version>2.3.6-GA</org.exoplatform.kernel.version>
++		<org.exoplatform.core.version>2.4.6-GA</org.exoplatform.core.version>
++		<org.exoplatform.ws.version>2.2.6-GA</org.exoplatform.ws.version>
++		<org.exoplatform.jcr.version>1.14.6-GA</org.exoplatform.jcr.version>
++		<org.exoplatform.portal.version>3.4.0.Final</org.exoplatform.portal.version>
+ 		<org.exoplatform.ecms.version>2.2.0-Beta2-SNAPSHOT</org.exoplatform.ecms.version>
+-		<org.exoplatform.commons.version>1.0.3</org.exoplatform.commons.version>
++		<org.exoplatform.commons.version>4.0.0.Alpha1-ut-reducing-SNAPSHOT</org.exoplatform.commons.version>
+ 		<org.exoplatform.exopackage.version>1.1.0</org.exoplatform.exopackage.version>
+ 		<org.exoplatform.tool.version>1.0.0</org.exoplatform.tool.version>
+ 
+-		<org.gatein.common.version>2.0.3-GA</org.gatein.common.version>
+-		<org.gatein.wci.version>2.0.2-GA</org.gatein.wci.version>
+-		<org.gatein.pc.version>2.2.0-GA</org.gatein.pc.version>
+-		<org.gatein.wsrp.version>1.1.1-GA</org.gatein.wsrp.version>
+-		<org.gatein.mop.version>1.0.4-GA</org.gatein.mop.version>
+-		<org.shindig.version>1.0-r790473-Patch05</org.shindig.version>
+-		<org.chromattic.version>1.0.4</org.chromattic.version>
+-
+-		<org.fontbox.version>0.1.0</org.fontbox.version>
+-		<org.slf4j.version>1.5.6</org.slf4j.version>
+-		<org.json.version>20070829</org.json.version>
+-		<org.jboss.version>2.2.9.GA</org.jboss.version>
+-		<org.reflext.version>1.0.0</org.reflext.version>
+-		<org.testng.version>5.10</org.testng.version>
+-		<org.jvnet.jaxb2.maven2.version>0.1</org.jvnet.jaxb2.maven2.version>
+-		<org.jsecurity.version>0.9.0</org.jsecurity.version>
+-
+-		<net.oauth.core.version>20090531</net.oauth.core.version>
+-		<net.oauth.version>20080621</net.oauth.version>
+-		<net.sourceforge.nekohtml.version>1.9.9</net.sourceforge.nekohtml.version>
+ 
+-		<com.google.collections.version>1.0-rc2</com.google.collections.version>
+-		<com.google.code.guice.version>2.0</com.google.code.guice.version>
+-		<com.ibm.icu.version>3.8</com.ibm.icu.version>
+-		<com.sun.xml.bind.version>2.1.7</com.sun.xml.bind.version>
+ 	</properties>
+ 
+ 	<build>
+@@ -129,193 +78,77 @@
+ 	<dependencies>
+ 
+ 		<dependency>
+-			<groupId>javax.servlet</groupId>
+-			<artifactId>servlet-api</artifactId>
+-			<scope>provided</scope>
+-			<version>${javax.servlet.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>javax.jcr</groupId>
+-			<artifactId>jcr</artifactId>
+-			<scope>provided</scope>
+-			<version>${javax.jcr.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>commons-lang</groupId>
+-			<artifactId>commons-lang</artifactId>
+-			<scope>provided</scope>
+-			<version>${commons-lang.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.gatein.pc</groupId>
+-			<artifactId>pc-api</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.gatein.pc.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.exoplatform.kernel</groupId>
+-			<artifactId>exo.kernel.commons</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.kernel.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.exoplatform.kernel</groupId>
+-			<artifactId>exo.kernel.container</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.kernel.version}</version>
++			<groupId>org.exoplatform.portal</groupId>
++			<artifactId>exo.portal.component.test.core</artifactId>
++			<version>${org.exoplatform.portal.version}</version>
++			<scope>test</scope>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>org.exoplatform.core</groupId>
+-			<artifactId>exo.core.component.organization.api</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.core.version}</version>
++			<groupId>org.exoplatform.portal</groupId>
++			<artifactId>exo.portal.component.test.jcr</artifactId>
++			<version>${org.exoplatform.portal.version}</version>
++			<scope>test</scope>
+ 		</dependency>
+ 
+ 		<dependency>
+ 			<groupId>org.exoplatform.jcr</groupId>
+ 			<artifactId>exo.jcr.component.core</artifactId>
+-			<scope>provided</scope>
+ 			<version>${org.exoplatform.jcr.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>org.exoplatform.jcr</groupId>
+-			<artifactId>exo.jcr.component.ext</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.jcr.version}</version>
++			<groupId>picocontainer</groupId>
++			<artifactId>picocontainer</artifactId>
++			<version>${picocontainer.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+ 			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.component.portal</artifactId>
+-			<scope>provided</scope>
++			<artifactId>exo.portal.component.resources</artifactId>
+ 			<version>${org.exoplatform.portal.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+ 			<groupId>org.exoplatform.portal</groupId>
+ 			<artifactId>exo.portal.component.web.api</artifactId>
+-			<scope>provided</scope>
+ 			<version>${org.exoplatform.portal.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.component.web.controller</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.portal.version}</version>
+-		</dependency>
+-
+-		<dependency>
+-			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.webui.framework</artifactId>
++			<groupId>junit</groupId>
++			<artifactId>junit</artifactId>
+ 			<scope>provided</scope>
+-			<version>${org.exoplatform.portal.version}</version>
++			<version>${junit.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.webui.portal</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.portal.version}</version>
++			<groupId>org.exoplatform.kernel</groupId>
++			<artifactId>exo.kernel.container</artifactId>
++			<version>${org.exoplatform.kernel.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>junit</groupId>
+-			<artifactId>junit</artifactId>
+-			<scope>test</scope>
+-			<version>3.8.1</version>
++			<groupId>org.exoplatform.core</groupId>
++			<artifactId>exo.core.component.organization.api</artifactId>
++			<version>${org.exoplatform.core.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+-			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.component.test.core</artifactId>
+-			<scope>provided</scope>
+-			<version>${org.exoplatform.portal.version}</version>
++			<groupId>org.exoplatform.kernel</groupId>
++			<artifactId>exo.kernel.commons</artifactId>
++			<version>${org.exoplatform.kernel.version}</version>
+ 		</dependency>
+-
+ 		<dependency>
+ 			<groupId>org.exoplatform.portal</groupId>
+-			<artifactId>exo.portal.component.test.jcr</artifactId>
+-			<scope>provided</scope>
++			<artifactId>exo.portal.webui.core</artifactId>
+ 			<version>${org.exoplatform.portal.version}</version>
+ 		</dependency>
+-
++		<!-- >dependency> <groupId>org.mockito</groupId> <artifactId>mockito-all</artifactId> 
++			</dependency -->
+ 		<dependency>
+ 			<groupId>org.slf4j</groupId>
+-			<artifactId>slf4j-api</artifactId>
+-			<version>${org.slf4j.version}</version>
+-			<type>jar</type>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.slf4j</groupId>
+-			<artifactId>slf4j-log4j12</artifactId>
+-			<version>${org.slf4j.version}</version>
+-			<type>jar</type>
+-			<scope>provided</scope>
++			<artifactId>slf4j-simple</artifactId>
++			<version>${org.slf4j.slf4j-simple.version}</version>
++			<scope>test</scope>
+ 		</dependency>
+ 		<dependency>
+-			<groupId>hsqldb</groupId>
++			<groupId>org.hsqldb</groupId>
+ 			<artifactId>hsqldb</artifactId>
+-			<version>${hsqldb.version}</version>
+-			<type>jar</type>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>xalan</groupId>
+-			<artifactId>xalan</artifactId>
+-			<version>2.7.1</version>
+-			<type>jar</type>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.common</artifactId>
+-			<version>1.0.4</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.apt</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.core</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.api</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.exo</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.metamodel</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
+-		</dependency>
+-		<dependency>
+-			<groupId>org.chromattic</groupId>
+-			<artifactId>chromattic.spi</artifactId>
+-			<version>${org.chromattic.version}</version>
+-			<scope>provided</scope>
++			<version>${org.hsqldb.version}</version>
++			<scope>test</scope>
+ 		</dependency>
+ 	</dependencies>
+ </project>
+diff --git a/src/test/java/org/exoplatform/jcr/example/BookManagerTest.java b/src/test/java/org/exoplatform/jcr/example/BookManagerTest.java
+index 1bce15a..cb293e5 100644
+--- a/src/test/java/org/exoplatform/jcr/example/BookManagerTest.java
++++ b/src/test/java/org/exoplatform/jcr/example/BookManagerTest.java
+@@ -22,8 +22,9 @@ import org.exoplatform.jcr.example.pojo.Book;
+ import org.exoplatform.jcr.example.service.BookManager;
+ 
+ @ConfiguredBy({
+-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
+-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
++//		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
++//		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
++		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-configuration.xml"),		
+ 		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-example-test-configuration.xml")
+ 		})
+ public class BookManagerTest extends AbstractKernelTest {
+@@ -40,6 +41,7 @@ public class BookManagerTest extends AbstractKernelTest {
+ 		portalContainer = PortalContainer.getInstance();
+ 		repositoryService = (RepositoryService) portalContainer
+ 				.getComponentInstanceOfType(RepositoryService.class);
++		System.out.println("----repositoryService "+repositoryService);
+ 		sessionManager = new JCRSessionManager(WORKSPACE, repositoryService);
+ 
+ 	}
+diff --git a/src/test/java/org/exoplatform/jcr/example/PersonManagerTest.java b/src/test/java/org/exoplatform/jcr/example/PersonManagerTest.java
+index ce4cb19..2e97be5 100644
+--- a/src/test/java/org/exoplatform/jcr/example/PersonManagerTest.java
++++ b/src/test/java/org/exoplatform/jcr/example/PersonManagerTest.java
+@@ -22,8 +22,9 @@ import org.exoplatform.jcr.example.service.PersonManager;
+ 
+ 
+ @ConfiguredBy({
+-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
+-		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
++//	@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.jcr-configuration.xml"),
++//	@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/exo.portal.component.test.organization-configuration.xml"),
++	@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-configuration.xml"),		
+ 		@ConfigurationUnit(scope = ContainerScope.PORTAL, path = "conf/portal/jcr-example-test-configuration.xml")
+ 		})
+ public class PersonManagerTest extends AbstractKernelTest {
+@@ -40,6 +41,7 @@ public class PersonManagerTest extends AbstractKernelTest {
+ 		portalContainer = PortalContainer.getInstance();
+ 		repositoryService = (RepositoryService) portalContainer
+ 				.getComponentInstanceOfType(RepositoryService.class);
++		System.out.println("----repositoryService "+repositoryService);
+ 		sessionManager = new JCRSessionManager(WORKSPACE, repositoryService);
+ 	}
+ 
